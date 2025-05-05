@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'io.github.luis01felipe.emergynalyzer'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': 'EmergAnalyzer',
+                'Implementation-Version': version,
+                'Main-Class': 'io.github.luis01felipe.emergyanalyzer.EmergyAnalyzer'
+        )
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

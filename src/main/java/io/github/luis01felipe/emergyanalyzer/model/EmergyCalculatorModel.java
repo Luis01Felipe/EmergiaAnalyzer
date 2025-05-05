@@ -1,6 +1,6 @@
-package io.github.luis01felipe.model;
+package io.github.luis01felipe.emergyanalyzer.model;
 
-public class CalculadoraEmergia {
+public class EmergyCalculatorModel {
 
     // Função de conversão de kWh para sej
     public double kwhToSej(double kwh) {
@@ -8,7 +8,7 @@ public class CalculadoraEmergia {
     }
 
     // Função de conversão de litros para sej
-    public double litroToSej(double litros) {
+    public double literToSej(double litros) {
         return litros * 0.5;  // 1 litro de água = 0.5 sej
     }
 
@@ -18,23 +18,23 @@ public class CalculadoraEmergia {
     }
 
     // Função para calcular a emergia total
-    public double calcularEnergiaEmergia(double consumoEnergia) {
-        return kwhToSej(consumoEnergia);
+    public double calculateEnergy(double energyConsumption) {
+        return kwhToSej(energyConsumption);
     }
 
-    public double calcularWaterEmergia(double consumoAgua) {
-        return litroToSej(consumoAgua * 30);  // 30 dias por mês
+    public double calculateWater(double waterUsage) {
+        return literToSej(waterUsage * 30);  // 30 dias por mês
     }
 
-    public double calcularTreatmentEmergia(double tratamentoAgua) {
-        return m3ToSej(tratamentoAgua);
+    public double calculateTreatment(double waterTreatment) {
+        return m3ToSej(waterTreatment);
     }
 
     // Função para calcular a emergia total
     public double calcularTotalEmergia(double energia, double agua, double tratamento) {
-        double emergiaEnergia = calcularEnergiaEmergia(energia);
-        double emergiaAgua = calcularWaterEmergia(agua);
-        double emergiaTratamento = calcularTreatmentEmergia(tratamento);
+        double emergiaEnergia = calculateEnergy(energia);
+        double emergiaAgua = calculateWater(agua);
+        double emergiaTratamento = calculateTreatment(tratamento);
         return emergiaEnergia + emergiaAgua + emergiaTratamento;
     }
 }

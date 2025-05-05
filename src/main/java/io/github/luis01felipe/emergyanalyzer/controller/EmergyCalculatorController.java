@@ -1,14 +1,14 @@
-package io.github.luis01felipe.controller;
+package io.github.luis01felipe.emergyanalyzer.controller;
 
-import io.github.luis01felipe.model.CalculadoraEmergia;
-import io.github.luis01felipe.view.MainView;
+import io.github.luis01felipe.emergyanalyzer.model.EmergyCalculatorModel;
+import io.github.luis01felipe.emergyanalyzer.view.MainView;
 
-public class CalculadoraEmergiaController {
+public class EmergyCalculatorController {
 
-    private CalculadoraEmergia model;
+    private final EmergyCalculatorModel model;
     private MainView view;
 
-    public CalculadoraEmergiaController(CalculadoraEmergia model) {
+    public EmergyCalculatorController(EmergyCalculatorModel model) {
         this.model = model;
     }
 
@@ -18,9 +18,9 @@ public class CalculadoraEmergiaController {
 
     // Método chamado quando o botão de calcular é pressionado
     public void onCalculateButtonClick(double energy, double water, double treatment) {
-        double energyEmergia = model.calcularEnergiaEmergia(energy);
-        double waterEmergia = model.calcularWaterEmergia(water);
-        double treatmentEmergia = model.calcularTreatmentEmergia(treatment);
+        double energyEmergia = model.calculateEnergy(energy);
+        double waterEmergia = model.calculateWater(water);
+        double treatmentEmergia = model.calculateTreatment(treatment);
         double totalEmergia = model.calcularTotalEmergia(energy, water, treatment);
 
         // Passa os resultados para a View

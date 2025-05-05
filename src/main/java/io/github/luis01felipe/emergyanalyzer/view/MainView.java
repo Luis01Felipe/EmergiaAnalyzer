@@ -1,10 +1,11 @@
-package io.github.luis01felipe.view;
+package io.github.luis01felipe.emergyanalyzer.view;
+
+import io.github.luis01felipe.emergyanalyzer.controller.EmergyCalculatorController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import io.github.luis01felipe.controller.CalculadoraEmergiaController;
 
 public class MainView {
 
@@ -12,10 +13,10 @@ public class MainView {
     private List<JLabel> labels;
     private JTextField energyField, waterField, treatmentField;
     private JLabel energyResultLabel, waterResultLabel, treatmentResultLabel, totalResultLabel;
-    private CalculadoraEmergiaController controller;
+    private final EmergyCalculatorController controller;
 
     // O Controller vai se comunicar com a View para atualizar os resultados
-    public MainView(CalculadoraEmergiaController controller) {
+    public MainView(EmergyCalculatorController controller) {
         this.controller = controller;
         initializeComponents();
         configureWindow();

@@ -7,9 +7,9 @@ public class EmergyCalculatorModel {
         return kwh * 3.6e6;  // 1 kWh = 3.6e6 sej
     }
 
-    // Função de conversão de litros para sej
-    public double literToSej(double litros) {
-        return litros * 0.5;  // 1 litro de água = 0.5 sej
+    // Função de conversão de liters para sej
+    public double literToSej(double liters) {
+        return liters * 0.5;  // 1 litro de água = 0.5 sej
     }
 
     // Função de conversão de m³ para sej
@@ -31,10 +31,10 @@ public class EmergyCalculatorModel {
     }
 
     // Função para calcular a emergia total
-    public double calcularTotalEmergia(double energia, double agua, double tratamento) {
-        double emergiaEnergia = calculateEnergy(energia);
-        double emergiaAgua = calculateWater(agua);
-        double emergiaTratamento = calculateTreatment(tratamento);
-        return emergiaEnergia + emergiaAgua + emergiaTratamento;
+    public double calcularTotalEmergia(double energy, double water, double treatment) {
+        double emergyEnergy = calculateEnergy(energy);
+        double emergyWater = calculateWater(water);
+        double emergyTreatment = calculateTreatment(treatment);
+        return emergyEnergy + emergyWater + emergyTreatment;
     }
 }
